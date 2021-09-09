@@ -8,7 +8,7 @@ require('chai')
 function tokens(n) {
   return web3.utils.toWei(n, 'ether');
 }
-
+//3. Ponemos las accounts.
 contract('EthSwap', ([deployer, investor]) => {
   let token, ethSwap
 
@@ -31,7 +31,8 @@ contract('EthSwap', ([deployer, investor]) => {
       const name = await ethSwap.name()
       assert.equal(name, 'EthSwap Instant Exchange')
     })
-
+//4.0 OJO ANTES token y ethswap estaban debajo de este it con un  let antes, lo q hemos hecho es ponerlo
+//en before y el let tmb arriba. PARA 5.0 VES A ETHSWAP.SOL
     it('contract has tokens', async () => {
       let balance = await token.balanceOf(ethSwap.address)
       assert.equal(balance.toString(), tokens('1000000'))
