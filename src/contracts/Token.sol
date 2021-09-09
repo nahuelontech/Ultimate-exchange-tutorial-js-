@@ -20,7 +20,10 @@ contract Token {
 
     mapping(address => uint256) public balanceOf;
     mapping(address => mapping(address => uint256)) public allowance;
-
+//1.THIS IS A FUNCTION THAT GETS RUNNED WHENEVER THE SC IS PUT ON THE BC. WE TAKE ALL THE TOKENS
+//AND WE ASSIGN THEM TO THE USER THAT DEPLOYS THE SC. EN ESTE CASO ES LA PRIMERA CUENTA DENTRO DE GANASHE
+//PERO NOSOTROS NO QUEREMOS TENER TODOS LOS TOKENS, LO Q QUEREMOS ES Q EL SC ETHSWAP LOS TENGA.
+//PARA 2.0 ESO VETE A DEPLOYCONTRACSTS
     constructor() public {
         balanceOf[msg.sender] = totalSupply;
     }
