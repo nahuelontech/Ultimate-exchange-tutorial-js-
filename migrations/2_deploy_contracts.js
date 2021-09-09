@@ -9,7 +9,7 @@ module.exports = async function(deployer) {
   // Deploy EthSwap
   await deployer.deploy(EthSwap, token.address);
   const ethSwap = await EthSwap.deployed()
-//2.0 vamos a transferir los tokens de la cuenta 1 de ganashe a el contrato ethswap
+//2.0 vamos a transferir los tokens de la cuenta 1 de ganashe a el contrato ethswap PARA 3. VES A ETHSWAP
   // Transfer all tokens to EthSwap (1 million)
   await token.transfer(ethSwap.address, '1000000000000000000000000')
 };
