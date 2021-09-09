@@ -42,7 +42,7 @@ contract EthSwap {
     // Emit an event
     emit TokensPurchased(msg.sender, address(token), tokenAmount, rate);
   }
-
+//7.(3era parte video)
   function sellTokens(uint _amount) public {
     // User can't sell more tokens than they have
     require(token.balanceOf(msg.sender) >= _amount);
@@ -53,9 +53,9 @@ contract EthSwap {
     // Require that EthSwap has enough Ether
     require(address(this).balance >= etherAmount);
 
-    // Perform sale
+    // Perform sale            7.2.We are transfer the tokens to address(this), which is the SC
     token.transferFrom(msg.sender, address(this), _amount);
-    msg.sender.transfer(etherAmount);
+    msg.sender.transfer(etherAmount); //7.1. We r saying, send eth to the person who call this function
 
     // Emit an event
     emit TokensSold(msg.sender, address(token), _amount, rate);
