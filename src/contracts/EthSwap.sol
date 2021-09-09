@@ -53,7 +53,7 @@ contract EthSwap {
     // Require that EthSwap has enough Ether
     require(address(this).balance >= etherAmount);
 
-    // Perform sale            7.2.We are transfer the tokens to address(this), which is the SC
+    // Perform sale            7.2.We are transfer the tokens to address(this), which is the SC. Falta parte 4 Y 5
     token.transferFrom(msg.sender, address(this), _amount);
     msg.sender.transfer(etherAmount); //7.1. We r saying, send eth to the person who call this function
 
