@@ -74,7 +74,7 @@ class App extends Component {
       })
     })
   }
-
+//THIS IS THE FUNCTION THAT GETS RUNNED WHENEVER THE COMPONENT IS CREATED(LOOK UP). Llama la función construc en el component q extendemos
   constructor(props) {
     super(props)
     this.state = {
